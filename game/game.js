@@ -20,6 +20,7 @@ const player = {
     width: 30,
     height: 40,
     vy: 0,
+
     draw() {
         ctx.fillStyle = '#ff0';
         ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -100,6 +101,7 @@ function update(time = 0) {
     // Update obstacles
     obstacles.forEach((obs) => {
         obs.x -= SCROLL_SPEED;
+
         ctx.fillStyle = '#964B00';
         ctx.fillRect(obs.x, obs.y, obs.width, obs.height);
     });
@@ -109,6 +111,7 @@ function update(time = 0) {
     items.forEach((item) => {
         item.x -= SCROLL_SPEED;
         ctx.fillStyle = item.heal ? '#f00' : '#0f0';
+
         ctx.beginPath();
         ctx.arc(item.x, item.y, item.radius, 0, Math.PI * 2);
         ctx.fill();
@@ -156,7 +159,6 @@ function update(time = 0) {
     ctx.fillText(`Score: ${score}`, 10, 20);
     ctx.fillText(`Health: ${health}`, 10, 40);
     ctx.fillText(`Distance: ${Math.floor(distance)}`, 10, 60);
-
     if (gameOver) {
         ctx.fillStyle = 'rgba(0,0,0,0.5)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
