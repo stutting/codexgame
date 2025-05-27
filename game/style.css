@@ -1,3 +1,8 @@
+/*
+  Basic styling for the demo. Centers the canvas on screen and gives
+  it a simple sky-blue background.
+*/
+
 body {
     margin: 0;
     background: #333;
